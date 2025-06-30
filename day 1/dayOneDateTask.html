@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Task</title>
+</head>
+<body>
+    
+
+
+    <script>
+        
+let value = prompt("enter date with this format DD-MM-YYYY ");
+function testInput(inputdate){
+    const regex = /^\d{2}-\d{2}-\d{4}$/;
+    if(regex.test(inputdate)&& inputdate.length == 10 && 
+    inputdate.charAt(2) == "-" && inputdate.charAt(5) == "-")
+    {
+            console.log("valid date");
+    }else{console.log("wrong date format");}
+    let parts = inputdate.split("-");
+    let d = parseInt(parts[0]);
+    let m = parseInt(parts[1]);
+    let y = parseInt(parts[2]);
+    let date =new Date (y , m-1 , d);
+    
+    let day = String(date.getDate()).padStart(2, '0');
+    let month = String(date.getMonth() + 1).padStart(2, '0');
+    let year = date.getFullYear();
+
+  alert(`The date is: ${day}/${month}/${year}`);
+
+}
+
+
+testInput(value)
+
+    </script>
+</body>
+</html>
