@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Recipes - Powered by Forkify</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>Delicious Recipes</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active" data-category="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-category="pizza">Pizza</a></li>
+                    <li><a href="#" class="nav-link" data-category="pasta">Pasta</a></li>
+                    <li><a href="#" class="nav-link" data-category="popcorn">Popcorn</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">Discover Amazing Recipes</h2>
+                <p class="hero-subtitle">Find your next favorite dish from thousands of recipes</p>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search for recipes..." class="search-input">
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipes-section">
+            <div class="container">
+                <div class="section-header">
+                    <h3 id="sectionTitle">Popular Recipes</h3>
+                    <div class="loading" id="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Loading delicious recipes...</span>
+                    </div>
+                </div>
+                <div class="recipes-grid" id="recipesGrid">
+                    <!-- Recipe cards will be dynamically inserted here -->
+                </div>
+                <div class="no-results" id="noResults">
+                    <i class="fas fa-search"></i>
+                    <h3>No recipes found</h3>
+                    <p>Try searching for something else!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Delicious Recipes. Powered by Forkify API</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
