@@ -1,0 +1,445 @@
+body {
+  margin: 0;
+  padding-top: 70px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #292d3e;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+nav h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav li {
+  cursor: pointer;
+  transition: color 0.3s;
+  transition: all 0.3s ease;
+}
+
+
+
+nav li:hover {
+  color: #ffcc00;
+    transform: scale(1.1);
+
+}
+
+#meals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card button {
+  margin: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #292d3e;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #ffcc00;
+  color: #292d3e;
+}
+/* Hero Section */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #f8f9fa, #ececec);
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  background-color: #292d3e;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #ffcc00;
+  color: #292d3e;
+}
+
+/* Features Section */
+.features {
+  padding: 50px 20px;
+  background: white;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 30px;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feature {
+  background: #f2f2f2;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 250px;
+}
+
+/* Testimonials */
+.testimonials {
+  background: #fafafa;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 30px;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial {
+  background: #ffffff;
+  padding: 20px;
+  border-left: 5px solid #292d3e;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: left;
+}
+
+/* Footer */
+.footer {
+  background-color: #292d3e;
+  color: #fff;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-left h3 {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* Default light mode (existing styles already apply) */
+
+/* Dark mode styles */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark nav {
+  background-color: #ffcc00;
+  color: #292d3e;
+}
+
+body.dark nav li:hover {
+  color: #292d3e;
+}
+
+body.dark .card {
+  background-color: #292d3e;
+  color: #f0f0f0;
+}
+
+body.dark .card,
+body.dark .feature,
+body.dark .testimonial,
+body.dark .modal-content {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+body.dark footer {
+  background-color: #222;
+  color: #ccc;
+}
+
+body.dark footer {
+  background-color: #111;
+  color: #ccc;
+}
+
+body.dark #toggle-dark {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+/* Button style */
+#toggle-dark {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: 30px;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+#toggle-dark:hover {
+  transform: scale(1.2);
+}
+
+body.dark .hero {
+  background: #292d3e;
+  color: #fff;
+}
+
+body.dark .hero button {
+  background-color: #ffcc00;
+  color: #292d3e;
+}
+
+body.dark .hero button:hover {
+  background-color: #fff;
+  color: #292d3e;
+}
+
+/* ========== DARK MODE FULL PAGE ========== */
+
+body.dark {
+  background-color: #292d3e;
+  color: #ffffff;
+}
+
+/* Navbar */
+body.dark nav {
+  background-color: #ffcc00;
+  color: #292d3e;
+}
+
+body.dark nav li:hover {
+  color: #292d3e;
+}
+
+/* Hero Section */
+body.dark .hero {
+  background-color: #292d3e;
+  color: #ffffff;
+}
+
+body.dark .hero button {
+  background-color: #ffcc00;
+  color: #292d3e;
+}
+
+body.dark .hero button:hover {
+  background-color: #fff;
+  color: #292d3e;
+}
+
+/* Cards */
+body.dark .card {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+/* Features Section */
+body.dark .feature {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+/* Testimonials */
+body.dark .testimonial {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border-left-color: #ffcc00;
+}
+
+/* Modal */
+body.dark .modal-content {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+/* Footer */
+body.dark footer {
+  background-color: #111;
+  color: #cccccc;
+}
+
+body.dark footer a {
+  color: #ffcc00;
+}
+
+/* Toggle Button */
+body.dark #toggle-dark {
+  color: #292d3e;
+}
+/* Testimonials Section */
+body.dark .testimonials {
+  background-color: #292d3e;
+  color: #fff;
+}
+
+/* Features Section */
+body.dark .features {
+  background-color: #292d3e;
+  color: #fff;
+}
+
+/* العناوين برضو */
+body.dark .testimonials h2,
+body.dark .features h2 {
+  color: #ffcc00;
+}
+
+/* كروت الخصائص */
+body.dark .feature-cards .feature {
+  background-color: #292d3e;
+  color: #fff
+}
+
+  /* Nav links hover effect in Dark Mode */
+body.dark nav li {
+  transition: all 0.3s ease;
+}
+
+body.dark nav li:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+body.dark .footer {
+  background-color: #111;
+  color: #ccc;
+}
+
+body.dark .footer a {
+  color: #ffcc00;
+}
+ 
