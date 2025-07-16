@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ascii code Alert</title>
+</head>
+<body>
+
+  <input type="text" onkeydown="checkKey(event)" placeholder="Press any key">
+
+  <script>
+    function checkKey(e) {
+      let msg = "Code: " + e.keyCode;
+
+      if (e.altKey) msg += "\nAlt pressed";
+      if (e.ctrlKey) msg += "\nCtrl pressed";
+      if (e.shiftKey) msg += "\nShift pressed";
+
+      alert(msg);
+    }
+  </script>
+
+</body>
+</html>

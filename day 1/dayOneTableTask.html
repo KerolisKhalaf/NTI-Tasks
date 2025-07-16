@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Task</title>
+</head>
+<body>
+        
+<div class="user_table">
+        <h1>Table of Users</h1>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </div>
+
+
+
+<script>
+    
+function usertable(){
+let numOfUsers = parseInt(prompt("enter user num :"));
+   while (isNaN(numOfUsers) || numOfUsers <= 0) {
+        numOfUsers = parseInt(prompt("Please enter a valid number greater than 0:"));
+    }
+
+let users = [];
+
+for (let i = 0; i < numOfUsers; i++) {
+    let name = prompt(`Enter user  ${i + 1} name :`);
+    while (name.length <= 3 || name.length >= 10) {
+        console.log("name must be between 3-10");
+        name = prompt(`Enter name ${i + 1}:`);
+    }
+
+    let age = parseInt(prompt(`Enter user  ${i + 1} age :`));
+    while (isNaN(age) || age <= 10 || age >= 60) {
+        console.log("age must be between 11-59");
+        age = parseInt(prompt(`Enter age ${i + 1}:`));
+    }
+
+    users.push({ name: name, age: age });
+}
+   let tbody = document.querySelector(".user_table");
+
+    users.forEach(function(user) {
+        let row = document.createElement("tr");
+
+        let nameCell = document.createElement("td");
+        nameCell.textContent = user.name;
+
+        let ageCell = document.createElement("td");
+        ageCell.textContent = user.age;
+
+        row.appendChild(nameCell);
+        row.appendChild(ageCell);
+
+        tbody.appendChild(row);
+    });
+}
+usertable();
+
+</script>
+</body>
+</html>
